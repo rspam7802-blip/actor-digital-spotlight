@@ -142,7 +142,7 @@ All colors MUST be HSL.
   }
 
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto; /* Let fullpage.js handle scrolling */
   }
 
   /* Custom scrollbar */
@@ -160,5 +160,36 @@ All colors MUST be HSL.
 
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-primary/30;
+  }
+
+  /* FullPage.js Navigation Styles */
+  #fp-nav ul li a span,
+  .fp-slidesNav ul li a span {
+    @apply bg-muted-foreground;
+  }
+
+  #fp-nav ul li a.active span,
+  .fp-slidesNav ul li a.active span,
+  #fp-nav ul li:hover a.active span,
+  .fp-slidesNav ul li:hover a.active span {
+    @apply bg-primary;
+  }
+
+  #fp-nav ul li:hover a span,
+  .fp-slidesNav ul li:hover a span {
+    @apply bg-primary/70;
+  }
+
+  /* Smooth transitions for all animated elements */
+  .section {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Hardware acceleration for smooth scrolling */
+  .fp-section,
+  .fp-slide {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 }

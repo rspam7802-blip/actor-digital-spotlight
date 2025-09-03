@@ -7,22 +7,28 @@ interface FullPageLayoutProps {
 const FullPageLayout = ({ children }: FullPageLayoutProps) => {
   return (
     <ReactFullpage
-      licenseKey="YOUR_LICENSE_KEY"
+      licenseKey="gplv3-license"
       credits={{}}
-      scrollingSpeed={1000}
+      scrollingSpeed={700}
+      easing="easeInOutCubic"
       navigation={true}
       navigationPosition="right"
       navigationTooltips={['Home', 'About', 'Portfolio', 'Contact']}
       showActiveTooltip={true}
-      sectionsColor={['', '', '', '']}
       anchors={['home', 'about', 'portfolio', 'contact']}
-      menu="#menu"
       keyboardScrolling={true}
       animateAnchor={true}
       recordHistory={true}
       controlArrows={false}
-      verticalCentered={true}
+      verticalCentered={false}
       responsiveWidth={768}
+      autoScrolling={true}
+      fitToSection={true}
+      fitToSectionDelay={1000}
+      scrollBar={false}
+      touchSensitivity={5}
+      normalScrollElementTouchThreshold={5}
+      bigSectionsDestination="top"
       render={() => (
         <ReactFullpage.Wrapper>
           {children}

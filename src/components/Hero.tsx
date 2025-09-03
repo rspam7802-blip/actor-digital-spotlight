@@ -20,9 +20,9 @@ const Hero = () => {
           {/* Main Title */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-foreground tracking-widest uppercase">
-              <span className="block">Your</span>
+              <span className="block">Siri</span>
               <span className="block text-primary font-normal bg-gradient-accent bg-clip-text text-transparent">
-                Name
+                Chandana
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-wide uppercase">

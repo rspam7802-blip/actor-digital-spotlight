@@ -5,8 +5,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@yourname.com",
-      href: "mailto:hello@yourname.com"
+      value: "siri.chandana.actor@gmail.com",
+      href: "mailto:siri.chandana.actor@gmail.com"
     },
     {
       icon: Phone,
@@ -26,17 +26,17 @@ const Contact = () => {
     {
       icon: Instagram,
       label: "Instagram",
-      href: "https://instagram.com/yourhandle"
+      href: "https://www.instagram.com/siri_chandana_7"
     },
     {
       icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com/yourhandle"
+      label: "Twitter", 
+      href: "https://twitter.com/sirichandana7"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/yourname"
+      href: "https://linkedin.com/in/sirichandana"
     }
   ];
 
@@ -147,7 +147,7 @@ const Contact = () => {
         {/* Footer */}
         <div className="text-center mt-16 pt-8 border-t border-border">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Siri Chandana. All rights reserved.
           </p>
         </div>
       </div>

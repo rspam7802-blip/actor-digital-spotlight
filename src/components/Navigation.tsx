@@ -19,7 +19,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-xl font-bold text-foreground tracking-wider">
-              YOUR NAME
+              SIRI CHANDANA
             </h1>
           </div>
 
