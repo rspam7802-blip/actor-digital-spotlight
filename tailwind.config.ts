@@ -84,8 +84,9 @@ export default {
 				'dramatic': 'var(--transition-dramatic)',
 			},
 			fontFamily: {
-				'display': ['Inter', 'system-ui', 'sans-serif'],
+				'display': ['Playfair Display', 'serif'],
 				'body': ['Inter', 'system-ui', 'sans-serif'],
+				'cinematic': ['Playfair Display', 'serif'],
 			},
 			keyframes: {
 				'accordion-down': {

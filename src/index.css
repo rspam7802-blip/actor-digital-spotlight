@@ -8,45 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Theatrical color palette inspired by stage lighting */
-    --background: 330 15% 8%;
-    --foreground: 320 20% 95%;
+    /* Cinematic Minimalism color palette */
+    --background: 220 13% 9%;
+    --foreground: 60 9% 98%;
 
-    --card: 330 25% 12%;
-    --card-foreground: 320 20% 95%;
+    --card: 220 13% 11%;
+    --card-foreground: 60 9% 98%;
 
-    --popover: 330 25% 12%;
-    --popover-foreground: 320 20% 95%;
+    --popover: 220 13% 11%;
+    --popover-foreground: 60 9% 98%;
 
-    --primary: 320 85% 65%;
-    --primary-foreground: 330 15% 8%;
-    --primary-glow: 315 100% 75%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 220 13% 9%;
+    --primary-glow: 45 100% 60%;
 
-    --secondary: 330 25% 18%;
-    --secondary-foreground: 320 20% 95%;
+    --secondary: 220 13% 16%;
+    --secondary-foreground: 60 9% 98%;
 
-    --muted: 330 15% 15%;
-    --muted-foreground: 320 15% 65%;
+    --muted: 220 13% 14%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 280 85% 60%;
-    --accent-foreground: 330 15% 8%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 220 13% 9%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 320 20% 95%;
+    --destructive-foreground: 60 9% 98%;
 
-    --border: 330 25% 20%;
-    --input: 330 25% 15%;
-    --ring: 320 85% 65%;
+    --border: 220 13% 18%;
+    --input: 220 13% 14%;
+    --ring: 45 100% 51%;
 
-    /* Dramatic gradients for theatrical effect */
-    --gradient-hero: linear-gradient(135deg, hsl(330 60% 15%), hsl(320 70% 25%), hsl(280 60% 35%));
-    --gradient-accent: linear-gradient(45deg, hsl(320 85% 65%), hsl(280 85% 60%));
-    --gradient-subtle: linear-gradient(180deg, hsl(330 25% 12%), hsl(330 15% 8%));
+    /* Cinematic gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 13% 9%), hsl(220 13% 16%), hsl(220 8% 20%));
+    --gradient-accent: linear-gradient(45deg, hsl(45 100% 51%), hsl(45 100% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 13% 11%), hsl(220 13% 9%));
     
     /* Cinematic shadows and glows */
-    --shadow-dramatic: 0 25px 50px -12px hsl(320 85% 65% / 0.4);
-    --shadow-glow: 0 0 40px hsl(315 100% 75% / 0.3);
-    --shadow-elegant: 0 10px 30px -10px hsl(330 60% 15% / 0.8);
+    --shadow-dramatic: 0 25px 50px -12px hsl(45 100% 51% / 0.4);
+    --shadow-glow: 0 0 40px hsl(45 100% 60% / 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(220 13% 9% / 0.8);
 
     /* Smooth theatrical transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,44 +82,44 @@ All colors MUST be HSL.
   }
 
   .light {
-    /* Light mode with elegant theatrical tones */
-    --background: 320 20% 96%;
-    --foreground: 330 25% 15%;
+    /* Light mode cinematic elegance */
+    --background: 60 9% 98%;
+    --foreground: 220 13% 9%;
 
-    --card: 320 30% 98%;
-    --card-foreground: 330 25% 15%;
+    --card: 60 9% 96%;
+    --card-foreground: 220 13% 9%;
 
-    --popover: 320 30% 98%;
-    --popover-foreground: 330 25% 15%;
+    --popover: 60 9% 96%;
+    --popover-foreground: 220 13% 9%;
 
-    --primary: 320 85% 55%;
-    --primary-foreground: 320 20% 96%;
-    --primary-glow: 315 100% 65%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 60 9% 98%;
+    --primary-glow: 45 100% 60%;
 
-    --secondary: 320 25% 90%;
-    --secondary-foreground: 330 25% 15%;
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 220 13% 9%;
 
-    --muted: 320 20% 92%;
-    --muted-foreground: 330 15% 45%;
+    --muted: 220 13% 93%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 280 85% 50%;
-    --accent-foreground: 320 20% 96%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 60 9% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 320 20% 96%;
+    --destructive-foreground: 60 9% 98%;
 
-    --border: 320 25% 85%;
-    --input: 320 25% 88%;
-    --ring: 320 85% 55%;
+    --border: 220 13% 86%;
+    --input: 220 13% 93%;
+    --ring: 45 100% 51%;
 
     /* Light mode gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(320 40% 85%), hsl(315 50% 75%), hsl(280 40% 65%));
-    --gradient-accent: linear-gradient(45deg, hsl(320 85% 55%), hsl(280 85% 50%));
-    --gradient-subtle: linear-gradient(180deg, hsl(320 30% 98%), hsl(320 20% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(60 9% 98%), hsl(220 13% 91%), hsl(220 8% 86%));
+    --gradient-accent: linear-gradient(45deg, hsl(45 100% 51%), hsl(45 100% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(60 9% 96%), hsl(60 9% 98%));
     
-    --shadow-dramatic: 0 25px 50px -12px hsl(320 85% 55% / 0.3);
-    --shadow-glow: 0 0 40px hsl(315 100% 65% / 0.2);
-    --shadow-elegant: 0 10px 30px -10px hsl(330 60% 25% / 0.15);
+    --shadow-dramatic: 0 25px 50px -12px hsl(45 100% 51% / 0.3);
+    --shadow-glow: 0 0 40px hsl(45 100% 60% / 0.2);
+    --shadow-elegant: 0 10px 30px -10px hsl(220 13% 9% / 0.15);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
