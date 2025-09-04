@@ -85,7 +85,7 @@ const CinematicPortfolio = () => {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-16">
           {categories.map((category) => (
             <Button
               key={category.id}
