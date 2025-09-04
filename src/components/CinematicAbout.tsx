@@ -150,16 +150,16 @@ const CinematicAbout = () => {
           <div className="grid grid-cols-3 gap-4 md:gap-8">
             {training.map((item, index) => (
               <Card key={index} className="bg-card border-border hover:border-primary/30 transition-smooth group">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-smooth">
-                    <GraduationCap className="h-8 w-8 text-primary" />
+                <CardContent className="p-3 md:p-8 text-center">
+                  <div className="w-10 h-10 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-6 group-hover:bg-primary/20 transition-smooth">
+                    <GraduationCap className="h-5 w-5 md:h-8 md:w-8 text-primary" />
                   </div>
-                  <Badge variant="outline" className="mb-4 border-primary/30 text-primary">
+                  <Badge variant="outline" className="mb-1 md:mb-4 border-primary/30 text-primary text-xs md:text-sm">
                     {item.year}
                   </Badge>
-                  <h4 className="text-lg font-cinematic text-foreground mb-2">{item.degree}</h4>
-                  <p className="text-primary font-medium mb-3">{item.institution}</p>
-                  <p className="text-sm text-muted-foreground">{item.focus}</p>
+                  <h4 className="text-sm md:text-lg font-cinematic text-foreground mb-1 md:mb-2 leading-tight">{item.degree}</h4>
+                  <p className="text-xs md:text-base text-primary font-medium mb-2 md:mb-3 leading-tight">{item.institution}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-tight">{item.focus}</p>
                 </CardContent>
               </Card>
             ))}

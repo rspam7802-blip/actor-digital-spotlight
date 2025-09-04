@@ -132,25 +132,31 @@ const ShowreelPlayer = () => {
         {/* Showreel Details */}
         <div className="mt-12 grid grid-cols-3 gap-4 md:gap-8">
           <div className="text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Play className="h-8 w-8 text-primary" />
+            <div className="w-10 h-10 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-4">
+              <Play className="h-5 w-5 md:h-8 md:w-8 text-primary" />
             </div>
-            <h3 className="text-lg font-medium text-foreground mb-2">Duration</h3>
-            <p className="text-muted-foreground">3 minutes 45 seconds</p>
+            <h3 className="text-sm md:text-lg font-medium text-foreground mb-1 md:mb-2 leading-tight">Duration</h3>
+            <p className="text-xs md:text-base text-muted-foreground leading-tight">
+              <span className="md:hidden">3 min 45 sec</span>
+              <span className="hidden md:inline">3 minutes 45 seconds</span>
+            </p>
           </div>
           <div className="text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Volume2 className="h-8 w-8 text-primary" />
+            <div className="w-10 h-10 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-4">
+              <Volume2 className="h-5 w-5 md:h-8 md:w-8 text-primary" />
             </div>
-            <h3 className="text-lg font-medium text-foreground mb-2">Featured Work</h3>
-            <p className="text-muted-foreground">Theater, Film & Television</p>
+            <h3 className="text-sm md:text-lg font-medium text-foreground mb-1 md:mb-2 leading-tight">Featured Work</h3>
+            <p className="text-xs md:text-base text-muted-foreground leading-tight">
+              <span className="md:hidden">Theater, Film & TV</span>
+              <span className="hidden md:inline">Theater, Film & Television</span>
+            </p>
           </div>
           <div className="text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <Maximize2 className="h-8 w-8 text-primary" />
+            <div className="w-10 h-10 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-4">
+              <Maximize2 className="h-5 w-5 md:h-8 md:w-8 text-primary" />
             </div>
-            <h3 className="text-lg font-medium text-foreground mb-2">Quality</h3>
-            <p className="text-muted-foreground">4K Ultra HD</p>
+            <h3 className="text-sm md:text-lg font-medium text-foreground mb-1 md:mb-2 leading-tight">Quality</h3>
+            <p className="text-xs md:text-base text-muted-foreground leading-tight">4K Ultra HD</p>
           </div>
         </div>
       </div>
