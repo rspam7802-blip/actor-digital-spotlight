@@ -147,7 +147,7 @@ const CinematicAbout = () => {
           <h3 className="text-3xl font-cinematic text-foreground mb-12 text-center">
             Training & <span className="text-primary">Education</span>
           </h3>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-4 md:gap-8">
             {training.map((item, index) => (
               <Card key={index} className="bg-card border-border hover:border-primary/30 transition-smooth group">
                 <CardContent className="p-8 text-center">

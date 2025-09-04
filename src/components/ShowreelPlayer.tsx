@@ -130,7 +130,7 @@ const ShowreelPlayer = () => {
         </div>
 
         {/* Showreel Details */}
-        <div className="mt-12 grid md:grid-cols-3 gap-8">
+        <div className="mt-12 grid grid-cols-3 gap-4 md:gap-8">
           <div className="text-center">
             <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
               <Play className="h-8 w-8 text-primary" />
