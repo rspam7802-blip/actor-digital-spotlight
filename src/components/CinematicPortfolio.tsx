@@ -174,13 +174,6 @@ const CinematicPortfolio = () => {
           </div>
         </div>
 
-        {/* Portfolio Gallery */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-cinematic text-foreground mb-12 text-center">
-            Photo <span className="text-primary">Gallery</span>
-          </h3>
-          <PortfolioGallery />
-        </div>
 
         {/* Call to Action */}
         <div className="text-center bg-gradient-subtle rounded-lg p-12">
