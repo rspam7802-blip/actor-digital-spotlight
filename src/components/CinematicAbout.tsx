@@ -139,28 +139,6 @@ const CinematicAbout = () => {
               ))}
             </div>
 
-            {/* Skills Visualization */}
-            <Card className="bg-card/50 border-border">
-              <CardContent className="p-8">
-                <h4 className="text-lg font-cinematic text-foreground mb-6">Core Competencies</h4>
-                <div className="space-y-4">
-                  {skills.map((skill, index) => (
-                    <div key={index} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium text-foreground">{skill.name}</span>
-                        <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-accent rounded-full transition-all duration-1000"
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
 
