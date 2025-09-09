@@ -148,8 +148,10 @@ const CinematicPortfolio = () => {
         <div className={`mb-20 transition-all duration-1000 delay-500 ${
           isVisible('portfolio-section') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}>
-          <h3 className="text-2xl font-cinematic text-foreground mb-12 text-center animate-text-shimmer bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text">
-            Featured <span className="text-primary animate-premium-glow">Productions</span>
+          <h3 className={`text-2xl font-cinematic text-foreground mb-12 text-center bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
+            isVisible('portfolio-section') ? 'animate-text-shimmer' : ''
+          }`}>
+            Featured <span className="text-primary">Productions</span>
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             {filteredProductions.map((production, index) => (
@@ -160,7 +162,7 @@ const CinematicPortfolio = () => {
                 }`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="aspect-video bg-muted relative overflow-hidden animate-premium-glow">
+                <div className="aspect-video bg-muted relative overflow-hidden group-hover:animate-premium-glow">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 group-hover:from-black/80 transition-all duration-500"></div>
                   <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-all duration-500"></div>
                   <div className="absolute bottom-4 left-4 z-20">

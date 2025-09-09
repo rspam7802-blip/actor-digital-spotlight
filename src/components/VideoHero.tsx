@@ -47,14 +47,14 @@ const VideoHero = () => {
               <span className={`block opacity-90 transition-all duration-1000 delay-300 ${
                 isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
               }`}>Siri</span>
-              <span className={`block text-primary font-medium bg-gradient-to-r from-primary via-primary-glow to-primary bg-300% animate-text-shimmer bg-clip-text text-transparent drop-shadow-lg transition-all duration-1000 delay-700 ${
-                isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+              <span className={`block text-primary font-medium bg-gradient-to-r from-primary via-primary-glow to-primary bg-300% bg-clip-text text-transparent drop-shadow-lg transition-all duration-1000 delay-700 ${
+                isLoaded ? 'translate-y-0 opacity-100 animate-text-shimmer' : 'translate-y-20 opacity-0'
               }`}>
                 Chandana
               </span>
             </h1>
-            <div className={`w-32 h-0.5 bg-gradient-accent mx-auto animate-premium-glow transition-all duration-1000 delay-1000 ${
-              isLoaded ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
+            <div className={`w-32 h-0.5 bg-gradient-accent mx-auto transition-all duration-1000 delay-1000 ${
+              isLoaded ? 'scale-x-100 opacity-100 animate-premium-glow' : 'scale-x-0 opacity-0'
             }`}></div>
             <p className={`text-xl md:text-3xl text-muted-foreground font-light tracking-widest uppercase transition-all duration-1000 delay-1300 ${
               isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
@@ -69,9 +69,9 @@ const VideoHero = () => {
           }`}>
             <Button
               size="lg"
-              className="bg-primary/90 hover:bg-primary text-primary-foreground shadow-dramatic transition-dramatic group px-8 py-4 text-lg font-medium tracking-wide animate-premium-glow hover:scale-105"
+              className="bg-primary/90 hover:bg-primary text-primary-foreground shadow-dramatic transition-dramatic group px-8 py-4 text-lg font-medium tracking-wide hover:scale-105"
             >
-              <Play className="h-5 w-5 mr-3 animate-pulse group-hover:scale-110 transition-transform" />
+              <Play className="h-5 w-5 mr-3 group-hover:scale-110 transition-transform" />
               View Showreel
             </Button>
             <Button

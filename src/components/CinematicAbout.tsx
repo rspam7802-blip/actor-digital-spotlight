@@ -89,7 +89,9 @@ const CinematicAbout = () => {
     <section ref={sectionRef} id="about" className="py-24 bg-gradient-subtle relative overflow-hidden"
              style={getParallaxStyle(0.1)}>
       {/* Animated Background Elements */}
-      <div className="absolute top-10 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-morph opacity-50" />
+      <div className={`absolute top-10 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl opacity-50 transition-all duration-1000 ${
+        isVisible('about-section') ? 'animate-morph' : ''
+      }`} />
       <div className="absolute bottom-20 right-20 w-48 h-48 bg-primary/8 rounded-full blur-2xl animate-float-3d opacity-60" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -98,11 +100,17 @@ const CinematicAbout = () => {
           isVisible('about-section') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}>
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-cinematic font-light text-foreground tracking-wide animate-text-shimmer bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text">
+            <h2 className={`text-4xl md:text-5xl font-cinematic font-light text-foreground tracking-wide bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
+              isVisible('about-section') ? 'animate-text-shimmer' : ''
+            }`}>
               About
-              <span className="block text-primary font-medium animate-premium-glow">The Artist</span>
+              <span className={`block text-primary font-medium transition-all duration-1000 delay-500 ${
+                isVisible('about-section') ? 'animate-premium-glow' : ''
+              }`}>The Artist</span>
             </h2>
-            <div className="w-32 h-0.5 bg-gradient-accent mx-auto animate-premium-glow"></div>
+            <div className={`w-32 h-0.5 bg-gradient-accent mx-auto transition-all duration-1000 delay-700 ${
+              isVisible('about-section') ? 'animate-premium-glow' : ''
+            }`}></div>
           </div>
         </div>
 
@@ -187,7 +195,9 @@ const CinematicAbout = () => {
         <div className={`mb-20 transition-all duration-1000 delay-700 ${
           isVisible('about-section') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}>
-          <h3 className="text-3xl font-cinematic text-foreground mb-12 text-center animate-text-shimmer bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text">
+          <h3 className={`text-3xl font-cinematic text-foreground mb-12 text-center bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
+            isVisible('about-section') ? 'animate-text-shimmer' : ''
+          }`}>
             Training & <span className="text-primary">Education</span>
           </h3>
           <div className="grid grid-cols-3 gap-4 md:gap-8">
@@ -219,7 +229,9 @@ const CinematicAbout = () => {
         <div className={`transition-all duration-1000 delay-900 ${
           isVisible('about-section') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}>
-          <h3 className="text-3xl font-cinematic text-foreground mb-12 text-center animate-text-shimmer bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text">
+          <h3 className={`text-3xl font-cinematic text-foreground mb-12 text-center bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
+            isVisible('about-section') ? 'animate-text-shimmer' : ''
+          }`}>
             Awards & <span className="text-primary">Recognition</span>
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
