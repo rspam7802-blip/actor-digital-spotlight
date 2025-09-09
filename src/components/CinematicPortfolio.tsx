@@ -227,7 +227,7 @@ const CinematicPortfolio = () => {
 
         {/* Call to Action */}
         <div className={`text-center bg-gradient-subtle rounded-lg p-8 md:p-12 mx-4 mb-8 hover:shadow-dramatic transition-all duration-700 hover:scale-[1.01] ${
-          isVisible('portfolio-section') ? 'animate-bounceIn' : 'opacity-0 scale-400'
+          isVisible('portfolio-section') ? 'animate-bounceIn' : 'opacity-0 scale-95'
         }`} style={{ animationDelay: '1200ms' }}>
           <div className="max-w-3xl mx-auto space-y-6">
             <h3 className="text-3xl font-cinematic text-foreground animate-text-shimmer bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text">
