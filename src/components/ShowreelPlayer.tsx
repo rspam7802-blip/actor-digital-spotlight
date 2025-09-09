@@ -44,7 +44,7 @@ const ShowreelPlayer = () => {
   };
 
   return (
-    <section ref={sectionRef} id="showreel" className="py-12 bg-gradient-subtle">
+    <section ref={sectionRef} id="showreel" className="py-16 bg-gradient-subtle">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">

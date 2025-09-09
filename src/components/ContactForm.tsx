@@ -90,7 +90,7 @@ const ContactForm = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="contact" className="py-12 bg-background relative overflow-hidden"
+    <section ref={sectionRef} id="contact" className="py-16 bg-background relative overflow-hidden"
              style={getParallaxStyle(0.02)}>
       {/* Animated Background Elements */}
       <div className="absolute top-16 left-16 w-72 h-72 bg-primary/4 rounded-full blur-3xl animate-float-3d opacity-60" />

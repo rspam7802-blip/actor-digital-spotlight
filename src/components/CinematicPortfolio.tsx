@@ -93,7 +93,7 @@ const CinematicPortfolio = () => {
     : featuredProductions.filter(prod => prod.type.toLowerCase() === activeFilter);
 
   return (
-    <section ref={sectionRef} id="portfolio" className="py-12 bg-background relative overflow-hidden"
+    <section ref={sectionRef} id="portfolio" className="py-16 bg-background relative overflow-hidden"
              style={getParallaxStyle(0.05)}>
       {/* Animated Background Elements */}
       <div className="absolute top-20 right-10 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-tilt-3d opacity-40" />

@@ -14,7 +14,7 @@ const VideoHero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video/Image Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-black">
@@ -36,14 +36,14 @@ const VideoHero = () => {
       <div className="absolute bottom-1/3 left-1/3 w-2 h-24 bg-gradient-accent opacity-15 -rotate-45 animate-orbit" />
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center max-w-5xl mx-auto px-6"
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-6 lg:px-8"
            style={getParallaxStyle(-0.1)}>
-        <div className={`space-y-12 transition-all duration-2000 ${
+        <div className={`space-y-8 transition-all duration-2000 ${
           isLoaded ? 'opacity-100 transform-none' : 'opacity-0 translate-y-10'
         }`}>
           {/* Main Title */}
-          <div className="space-y-6">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-header font-light text-foreground tracking-wider animate-slide-up-stagger">
+          <div className="space-y-4">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-header font-light text-foreground tracking-wider animate-slide-up-stagger">
               <span className={`block opacity-90 transition-all duration-1000 delay-300 ${
                 isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
               }`}>Siri</span>
@@ -56,7 +56,7 @@ const VideoHero = () => {
             <div className={`w-32 h-0.5 bg-gradient-accent mx-auto transition-all duration-1000 delay-1000 ${
               isLoaded ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
             }`}></div>
-            <p className={`text-xl md:text-3xl text-muted-foreground font-light tracking-widest uppercase transition-all duration-1000 delay-1300 ${
+            <p className={`text-lg md:text-xl text-muted-foreground font-light tracking-widest uppercase transition-all duration-1000 delay-1300 ${
               isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
             }`}>
               Actor • Performer • Artist
@@ -84,10 +84,10 @@ const VideoHero = () => {
           </div>
 
           {/* Artistic Quote */}
-          <div className={`mt-16 max-w-2xl mx-auto transition-all duration-1000 delay-1900 ${
+          <div className={`mt-12 max-w-xl mx-auto transition-all duration-1000 delay-1900 ${
             isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
-            <blockquote className="text-foreground/80 text-lg md:text-xl font-light italic leading-relaxed animate-fade-blur">
+            <blockquote className="text-foreground/80 text-base md:text-lg font-light italic leading-relaxed animate-fade-blur">
               "Every character is a journey into the depths of human experience, every performance a bridge between souls"
             </blockquote>
           </div>

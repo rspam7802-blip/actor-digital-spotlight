@@ -86,7 +86,7 @@ const CinematicAbout = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="about" className="py-12 bg-gradient-subtle relative overflow-hidden"
+    <section ref={sectionRef} id="about" className="py-16 bg-gradient-subtle relative overflow-hidden"
              style={getParallaxStyle(0.1)}>
       {/* Animated Background Elements */}
       <div className={`absolute top-10 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl opacity-50 transition-all duration-1000 ${
