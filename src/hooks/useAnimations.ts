@@ -43,15 +43,17 @@ export const useScrollAnimation = () => {
 
 export const useStaggeredAnimation = (itemsCount: number, delay = 100) => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
+  const [hasTriggered, setHasTriggered] = useState(false);
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
 
   const triggerStagger = () => {
+    // Prevent multiple triggers
+    if (hasTriggered) return;
+    setHasTriggered(true);
+
     // Clear existing timeouts
     timeoutsRef.current.forEach(timeout => clearTimeout(timeout));
     timeoutsRef.current = [];
-
-    // Reset visible items
-    setVisibleItems(new Set());
 
     // Stagger the animations
     for (let i = 0; i < itemsCount; i++) {
