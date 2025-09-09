@@ -69,9 +69,9 @@ const VideoHero = () => {
           }`}>
             <Button
               size="lg"
-              className="bg-primary/90 hover:bg-primary text-primary-foreground shadow-dramatic transition-dramatic group px-8 py-4 text-lg font-medium tracking-wide hover:animate-premium-glow hover:scale-105"
+              className="bg-primary/90 hover:bg-primary text-primary-foreground shadow-dramatic transition-dramatic group px-8 py-4 text-lg font-medium tracking-wide animate-premium-glow hover:scale-105"
             >
-              <Play className="h-5 w-5 mr-3 group-hover:scale-110 transition-transform" />
+              <Play className="h-5 w-5 mr-3 animate-pulse group-hover:scale-110 transition-transform" />
               View Showreel
             </Button>
             <Button

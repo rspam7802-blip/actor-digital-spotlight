@@ -192,7 +192,7 @@ const ContactForm = () => {
                 type="submit"
                 size="lg"
                 disabled={isSubmitting}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-dramatic transition-dramatic group hover:scale-105 hover:animate-premium-glow"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-dramatic transition-dramatic group hover:scale-105 animate-premium-glow"
               >
                 {isSubmitting ? (
                   <span className="animate-pulse">Sending...</span>
