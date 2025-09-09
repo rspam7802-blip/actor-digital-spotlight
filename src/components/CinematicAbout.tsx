@@ -86,7 +86,7 @@ const CinematicAbout = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="about" className="py-24 bg-gradient-subtle relative overflow-hidden"
+    <section ref={sectionRef} id="about" className="py-12 bg-gradient-subtle relative overflow-hidden"
              style={getParallaxStyle(0.1)}>
       {/* Animated Background Elements */}
       <div className={`absolute top-10 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl opacity-50 transition-all duration-1000 ${
@@ -100,11 +100,11 @@ const CinematicAbout = () => {
           isVisible('about-section') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}>
           <div className="space-y-4">
-            <h2 className={`text-4xl md:text-5xl font-cinematic font-light text-foreground tracking-wide bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
+            <h2 className={`text-4xl md:text-5xl font-header font-light text-foreground tracking-wide bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
               isVisible('about-section') ? 'animate-text-shimmer' : ''
             }`}>
               About
-              <span className={`block text-primary font-medium transition-all duration-1000 delay-500 ${
+              <span className={`block text-primary font-medium font-display transition-all duration-1000 delay-500 ${
                 isVisible('about-section') ? 'animate-premium-glow' : ''
               }`}>The Artist</span>
             </h2>
@@ -195,10 +195,10 @@ const CinematicAbout = () => {
         <div className={`mb-20 transition-all duration-1000 delay-700 ${
           isVisible('about-section') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}>
-          <h3 className={`text-3xl font-cinematic text-foreground mb-12 text-center bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
+          <h3 className={`text-3xl font-header text-foreground mb-12 text-center bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
             isVisible('about-section') ? 'animate-text-shimmer' : ''
           }`}>
-            Training & <span className="text-primary">Education</span>
+            Training & <span className="text-primary font-display">Education</span>
           </h3>
           <div className="grid grid-cols-3 gap-4 md:gap-8">
             {training.map((item, index) => (
@@ -229,10 +229,10 @@ const CinematicAbout = () => {
         <div className={`transition-all duration-1000 delay-900 ${
           isVisible('about-section') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
         }`}>
-          <h3 className={`text-3xl font-cinematic text-foreground mb-12 text-center bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
+          <h3 className={`text-3xl font-header text-foreground mb-12 text-center bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
             isVisible('about-section') ? 'animate-text-shimmer' : ''
           }`}>
-            Awards & <span className="text-primary">Recognition</span>
+            Awards & <span className="text-primary font-display">Recognition</span>
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
             {awards.map((award, index) => (

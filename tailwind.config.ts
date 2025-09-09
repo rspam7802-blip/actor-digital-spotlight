@@ -85,9 +85,10 @@ export default {
 				'dramatic': 'var(--transition-dramatic)',
 			},
 			fontFamily: {
-				'display': ['Playfair Display', 'serif'],
-				'body': ['Inter', 'system-ui', 'sans-serif'],
+				'display': ['Dancing Script', 'cursive'],
+				'header': ['Cormorant Garamond', 'serif'],
 				'cinematic': ['Playfair Display', 'serif'],
+				'body': ['Inter', 'system-ui', 'sans-serif']
 			},
 			keyframes: {
 				'accordion-down': {

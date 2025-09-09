@@ -43,11 +43,11 @@ const VideoHero = () => {
         }`}>
           {/* Main Title */}
           <div className="space-y-6">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-cinematic font-light text-foreground tracking-wider animate-slide-up-stagger">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-header font-light text-foreground tracking-wider animate-slide-up-stagger">
               <span className={`block opacity-90 transition-all duration-1000 delay-300 ${
                 isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
               }`}>Siri</span>
-              <span className={`block text-primary font-medium bg-gradient-to-r from-primary via-primary-glow to-primary bg-300% bg-clip-text text-transparent drop-shadow-lg transition-all duration-1000 delay-700 ${
+              <span className={`block text-primary font-medium font-display bg-gradient-to-r from-primary via-primary-glow to-primary bg-300% bg-clip-text text-transparent drop-shadow-lg transition-all duration-1000 delay-700 ${
                 isLoaded ? 'translate-y-0 opacity-100 animate-text-shimmer' : 'translate-y-20 opacity-0'
               }`}>
                 Chandana
