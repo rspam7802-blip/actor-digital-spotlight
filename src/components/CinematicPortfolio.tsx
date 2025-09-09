@@ -4,9 +4,11 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import PortfolioGallery from './PortfolioGallery';
+import ProductionGallery from './ProductionGallery';
 
 const CinematicPortfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [selectedProduction, setSelectedProduction] = useState<any>(null);
 
   const categories = [
     { id: 'all', name: 'All Work', count: 24 },
@@ -23,7 +25,7 @@ const CinematicPortfolio = () => {
       role: "Elena (Lead)",
       venue: "Metropolitan Theater Company",
       location: "New York, NY",
-      description: "A contemporary drama exploring family secrets and redemption through the lens of a troubled artist.",
+      description: "A powerful contemporary drama exploring family secrets, redemption, and the healing power of art through the journey of a complex protagonist.",
       status: "Current Production",
       image: "/api/placeholder/400/300"
     },
@@ -34,7 +36,7 @@ const CinematicPortfolio = () => {
       role: "Supporting Lead",
       venue: "Indie Films Studio",
       location: "Los Angeles, CA",
-      description: "Psychological thriller that premiered at Sundance Film Festival to critical acclaim.",
+      description: "An intense psychological thriller that premiered at Sundance Film Festival, earning critical acclaim for its nuanced character development.",
       status: "Festival Circuit",
       image: "/api/placeholder/400/300"
     },
@@ -45,7 +47,7 @@ const CinematicPortfolio = () => {
       role: "Ophelia",
       venue: "Shakespeare in the Park",
       location: "Central Park, NY",
-      description: "Classical interpretation of Shakespeare's tragedy in an acclaimed outdoor production.",
+      description: "A critically acclaimed interpretation of Shakespeare's timeless tragedy, bringing fresh perspective to this classic outdoor production.",
       status: "Completed Run",
       image: "/api/placeholder/400/300"
     },
@@ -56,11 +58,19 @@ const CinematicPortfolio = () => {
       role: "Recurring Character",
       venue: "Streaming Networks",
       location: "Atlanta, GA",
-      description: "Drama series exploring contemporary urban life through interconnected storylines.",
+      description: "An Emmy-considered drama series exploring contemporary urban life through interconnected storylines and compelling characters.",
       status: "Season 2 Renewed",
       image: "/api/placeholder/400/300"
     }
   ];
+
+  const openProductionGallery = (production: any) => {
+    setSelectedProduction(production);
+  };
+
+  const closeProductionGallery = () => {
+    setSelectedProduction(null);
+  };
 
   const filteredProductions = activeFilter === 'all' 
     ? featuredProductions 
@@ -73,14 +83,13 @@ const CinematicPortfolio = () => {
         <div className="text-center mb-20">
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-cinematic font-light text-foreground tracking-wide">
-              Portfolio
-              <span className="block text-primary font-medium">Gallery</span>
+              Professional
+              <span className="block text-primary font-medium">Portfolio</span>
             </h2>
             <div className="w-32 h-0.5 bg-gradient-accent mx-auto"></div>
           </div>
           <p className="mt-8 text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Explore my professional portfolio featuring theater, film, and television work. Each project represents 
-            a unique artistic journey and collaborative experience.
+            Discover my diverse body of work spanning theater, film, and television. Each production represents a unique artistic journey and collaborative creative experience.
           </p>
         </div>
 
@@ -162,7 +171,12 @@ const CinematicPortfolio = () => {
                       <Badge variant="secondary" className="text-xs">
                         {production.status}
                       </Badge>
-                      <Button variant="ghost" size="sm" className="text-primary hover:text-primary-foreground hover:bg-primary group/btn">
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        className="text-primary hover:text-primary-foreground hover:bg-primary group/btn"
+                        onClick={() => openProductionGallery(production)}
+                      >
                         View Details
                         <ExternalLink className="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
@@ -179,19 +193,19 @@ const CinematicPortfolio = () => {
         <div className="text-center bg-gradient-subtle rounded-lg p-12">
           <div className="max-w-3xl mx-auto space-y-6">
             <h3 className="text-3xl font-cinematic text-foreground">
-              Ready to Create Something
-              <span className="block text-primary font-medium">Extraordinary?</span>
+              Ready to Collaborate on Your
+              <span className="block text-primary font-medium">Next Production?</span>
             </h3>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Whether you're casting for theater, film, or digital media, I'm excited to explore new creative 
-              opportunities and bring compelling characters to life through collaborative storytelling.
+              Whether you're casting for theater, film, or digital media, I'm passionate about exploring new creative 
+              opportunities and bringing compelling characters to life through meaningful collaboration.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center pt-6">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-dramatic transition-dramatic group"
               >
-                Start a Project
+                Start a Conversation
                 <ExternalLink className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
@@ -199,13 +213,27 @@ const CinematicPortfolio = () => {
                 size="lg"
                 className="border-primary/30 hover:border-primary hover:bg-primary/10 group"
               >
-                Download Portfolio
+                Download Press Kit
                 <ExternalLink className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Production Gallery Modal */}
+      {selectedProduction && (
+        <ProductionGallery
+          isOpen={!!selectedProduction}
+          onClose={closeProductionGallery}
+          productionTitle={selectedProduction.title}
+          productionType={selectedProduction.type}
+          productionYear={selectedProduction.year}
+          productionCompany={selectedProduction.venue}
+          productionLocation={selectedProduction.location}
+          productionDescription={selectedProduction.description}
+        />
+      )}
     </section>
   );
 };

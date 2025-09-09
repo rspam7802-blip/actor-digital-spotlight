@@ -80,7 +80,7 @@ const ContactForm = () => {
             <div className="w-32 h-0.5 bg-gradient-accent mx-auto"></div>
           </div>
           <p className="mt-8 text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ready to bring your vision to life? I'd love to hear about your project and explore how we can collaborate.
+            Ready to bring your creative vision to life? I'd love to hear about your project and explore how we can collaborate to create something extraordinary.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ const ContactForm = () => {
             <div>
               <h3 className="text-2xl font-cinematic text-foreground mb-6">Send a Message</h3>
               <p className="text-muted-foreground">
-                Whether you're a director, producer, or casting agent, I'm always excited to discuss new opportunities.
+                Whether you're a director, producer, casting agent, or creative collaborator, I'm always excited to discuss new opportunities and meaningful projects.
               </p>
             </div>
 

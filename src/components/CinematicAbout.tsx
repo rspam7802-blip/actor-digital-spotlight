@@ -77,18 +77,18 @@ const CinematicAbout = () => {
           <div className="space-y-8">
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               <p className="text-xl text-foreground font-light italic leading-relaxed">
-                "Every character is a window into the human soul, every performance an opportunity to connect across the boundaries that divide us."
+                "Every character is a window into the human soul, every performance an opportunity to create profound connections that transcend boundaries."
               </p>
               <p>
-                With a passion for storytelling that ignited in childhood, I've dedicated my career to bringing 
-                complex, multifaceted characters to life across stage and screen. My approach combines rigorous 
-                classical training with contemporary sensibilities, creating performances that resonate with 
-                modern audiences while honoring the timeless craft of acting.
+                With a lifelong passion for storytelling that ignited in childhood, I've dedicated my career to bringing 
+                complex, multifaceted characters to life across stage and screen. My approach seamlessly blends rigorous 
+                classical training with contemporary sensibilities, creating performances that resonate deeply with 
+                modern audiences while honoring the timeless artistry of acting.
               </p>
               <p>
-                I believe in the transformative power of theater and film to challenge perspectives, inspire 
+                I believe deeply in the transformative power of theater and film to challenge perspectives, inspire 
                 empathy, and create moments of profound human connection. Each role presents a new opportunity 
-                to explore the depths of human experience and share universal truths through the art of performance.
+                to explore the depths of human experience and illuminate universal truths through the sacred art of performance.
               </p>
               <p>
                 My work spans from intimate black box theaters to major film productions, always maintaining 
@@ -103,7 +103,7 @@ const CinematicAbout = () => {
                 <blockquote className="text-foreground font-light italic leading-relaxed">
                   "The theater is a sacred space where truth and imagination converge, creating moments 
                   of profound human connection. I approach each role not as a performance, but as an 
-                  exploration of what it means to be human."
+                  exploration of what it truly means to be human in all our complexity and beauty."
                 </blockquote>
               </CardContent>
             </Card>

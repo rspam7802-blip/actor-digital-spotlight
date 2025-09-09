@@ -24,6 +24,8 @@ export type Database = {
           image_url: string
           is_featured: boolean | null
           order_index: number | null
+          production_title: string | null
+          production_type: string | null
           title: string
           updated_at: string
         }
@@ -36,6 +38,8 @@ export type Database = {
           image_url: string
           is_featured?: boolean | null
           order_index?: number | null
+          production_title?: string | null
+          production_type?: string | null
           title: string
           updated_at?: string
         }
@@ -48,6 +52,8 @@ export type Database = {
           image_url?: string
           is_featured?: boolean | null
           order_index?: number | null
+          production_title?: string | null
+          production_type?: string | null
           title?: string
           updated_at?: string
         }

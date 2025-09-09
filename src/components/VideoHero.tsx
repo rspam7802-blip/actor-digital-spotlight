@@ -56,7 +56,7 @@ const VideoHero = () => {
           {/* Artistic Quote */}
           <div className="mt-16 max-w-2xl mx-auto">
             <blockquote className="text-foreground/80 text-lg md:text-xl font-light italic leading-relaxed">
-              "Every character is a journey into the depths of human experience"
+              "Every character is a journey into the depths of human experience, every performance a bridge between souls"
             </blockquote>
           </div>
         </div>
