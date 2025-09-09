@@ -1,8 +1,35 @@
 import { Award, Theater, Users, GraduationCap, Star, Trophy } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useScrollAnimation, useStaggeredAnimation, useParallaxEffect } from '@/hooks/useAnimations';
+import { useEffect, useRef } from 'react';
 
 const CinematicAbout = () => {
+  const { registerElement, isVisible } = useScrollAnimation();
+  const { visibleItems: visibleHighlights, triggerStagger: triggerHighlights } = useStaggeredAnimation(3, 200);
+  const { visibleItems: visibleTraining, triggerStagger: triggerTraining } = useStaggeredAnimation(3, 150);
+  const { visibleItems: visibleAwards, triggerStagger: triggerAwards } = useStaggeredAnimation(4, 100);
+  const { getParallaxStyle } = useParallaxEffect();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    registerElement(sectionRef.current, 'about-section');
+  }, [registerElement]);
+
+  useEffect(() => {
+    if (isVisible('about-section')) {
+      const timer1 = setTimeout(() => triggerHighlights(), 500);
+      const timer2 = setTimeout(() => triggerTraining(), 1000);
+      const timer3 = setTimeout(() => triggerAwards(), 1500);
+      
+      return () => {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+      };
+    }
+  }, [isVisible, triggerHighlights, triggerTraining, triggerAwards]);
+
   const highlights = [
     {
       icon: Theater,
@@ -59,22 +86,31 @@ const CinematicAbout = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-subtle">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section ref={sectionRef} id="about" className="py-24 bg-gradient-subtle relative overflow-hidden"
+             style={getParallaxStyle(0.1)}>
+      {/* Animated Background Elements */}
+      <div className="absolute top-10 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-morph opacity-50" />
+      <div className="absolute bottom-20 right-20 w-48 h-48 bg-primary/8 rounded-full blur-2xl animate-float-3d opacity-60" />
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className={`text-center mb-20 transition-all duration-1000 ${
+          isVisible('about-section') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+        }`}>
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-cinematic font-light text-foreground tracking-wide">
+            <h2 className="text-4xl md:text-5xl font-cinematic font-light text-foreground tracking-wide animate-text-shimmer bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text">
               About
-              <span className="block text-primary font-medium">The Artist</span>
+              <span className="block text-primary font-medium animate-premium-glow">The Artist</span>
             </h2>
-            <div className="w-32 h-0.5 bg-gradient-accent mx-auto"></div>
+            <div className="w-32 h-0.5 bg-gradient-accent mx-auto animate-premium-glow"></div>
           </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 mb-20">
           {/* Personal Story */}
-          <div className="space-y-8">
+          <div className={`space-y-8 transition-all duration-1000 delay-300 ${
+            isVisible('about-section') ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
+          }`}>
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               <p className="text-xl text-foreground font-light italic leading-relaxed">
                 "Every character is a window into the human soul, every performance an opportunity to create profound connections that transcend boundaries."
@@ -97,7 +133,7 @@ const CinematicAbout = () => {
             </div>
 
             {/* Philosophy */}
-            <Card className="bg-card/50 border-primary/20">
+            <Card className="bg-card/50 border-primary/20 hover:shadow-glow-orb transition-all duration-500 hover:scale-105 animate-fade-blur">
               <CardContent className="p-8">
                 <h4 className="text-xl font-cinematic text-foreground mb-4">Artistic Philosophy</h4>
                 <blockquote className="text-foreground font-light italic leading-relaxed">
@@ -110,19 +146,24 @@ const CinematicAbout = () => {
           </div>
 
           {/* Highlights & Skills */}
-          <div className="space-y-8">
+          <div className={`space-y-8 transition-all duration-1000 delay-500 ${
+            isVisible('about-section') ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'
+          }`}>
             {/* Key Highlights */}
             <div className="grid gap-6">
               {highlights.map((item, index) => (
                 <Card
                   key={index}
-                  className="bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-smooth group"
+                  className={`bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-700 group hover:animate-card-hover-3d hover:shadow-dramatic ${
+                    visibleHighlights.has(index) ? 'animate-slide-up-stagger' : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-smooth">
-                          <item.icon className="h-6 w-6 text-primary" />
+                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-smooth group-hover:animate-premium-glow">
+                          <item.icon className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
                         </div>
                       </div>
                       <div className="space-y-2">
@@ -143,16 +184,24 @@ const CinematicAbout = () => {
         </div>
 
         {/* Training & Education */}
-        <div className="mb-20">
-          <h3 className="text-3xl font-cinematic text-foreground mb-12 text-center">
+        <div className={`mb-20 transition-all duration-1000 delay-700 ${
+          isVisible('about-section') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+        }`}>
+          <h3 className="text-3xl font-cinematic text-foreground mb-12 text-center animate-text-shimmer bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text">
             Training & <span className="text-primary">Education</span>
           </h3>
           <div className="grid grid-cols-3 gap-4 md:gap-8">
             {training.map((item, index) => (
-              <Card key={index} className="bg-card border-border hover:border-primary/30 transition-smooth group">
+              <Card 
+                key={index} 
+                className={`bg-card border-border hover:border-primary/30 transition-all duration-700 group hover:animate-card-hover-3d hover:shadow-dramatic ${
+                  visibleTraining.has(index) ? 'animate-bounceIn' : 'opacity-0 scale-75'
+                }`}
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
                 <CardContent className="p-3 md:p-8 text-center">
-                  <div className="w-10 h-10 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-6 group-hover:bg-primary/20 transition-smooth">
-                    <GraduationCap className="h-5 w-5 md:h-8 md:w-8 text-primary" />
+                  <div className="w-10 h-10 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-6 group-hover:bg-primary/20 transition-smooth group-hover:animate-premium-glow">
+                    <GraduationCap className="h-5 w-5 md:h-8 md:w-8 text-primary group-hover:scale-110 transition-transform" />
                   </div>
                   <Badge variant="outline" className="mb-1 md:mb-4 border-primary/30 text-primary text-xs md:text-sm">
                     {item.year}
@@ -167,17 +216,25 @@ const CinematicAbout = () => {
         </div>
 
         {/* Awards & Recognition */}
-        <div>
-          <h3 className="text-3xl font-cinematic text-foreground mb-12 text-center">
+        <div className={`transition-all duration-1000 delay-900 ${
+          isVisible('about-section') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+        }`}>
+          <h3 className="text-3xl font-cinematic text-foreground mb-12 text-center animate-text-shimmer bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text">
             Awards & <span className="text-primary">Recognition</span>
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
             {awards.map((award, index) => (
-              <Card key={index} className="bg-card border-border hover:border-primary/30 transition-smooth group">
+              <Card 
+                key={index} 
+                className={`bg-card border-border hover:border-primary/30 transition-all duration-700 group hover:animate-card-hover-3d hover:shadow-dramatic ${
+                  visibleAwards.has(index) ? 'animate-slide-3d-left' : 'opacity-0 translate-x-20'
+                }`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-smooth flex-shrink-0">
-                      {index === 0 ? <Trophy className="h-6 w-6 text-primary" /> : <Star className="h-6 w-6 text-primary" />}
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-smooth flex-shrink-0 group-hover:animate-premium-glow">
+                      {index === 0 ? <Trophy className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" /> : <Star className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />}
                     </div>
                     <div className="space-y-2 flex-1">
                       <div className="flex justify-between items-start">
