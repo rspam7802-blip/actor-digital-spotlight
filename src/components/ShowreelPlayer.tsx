@@ -1,12 +1,19 @@
 import { Play, Pause, Volume2, VolumeX, Maximize2 } from 'lucide-react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-image.jpg';
+import { useScrollAnimation } from '@/hooks/useAnimations';
 
 const ShowreelPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const { registerElement, isVisible } = useScrollAnimation();
+
+  useEffect(() => {
+    registerElement(sectionRef.current, 'showreel-section');
+  }, [registerElement]);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -37,12 +44,14 @@ const ShowreelPlayer = () => {
   };
 
   return (
-    <section id="showreel" className="py-24 bg-gradient-subtle">
+    <section ref={sectionRef} id="showreel" className="py-12 bg-gradient-subtle">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-cinematic font-light text-foreground tracking-wide">
+            <h2 className={`text-4xl md:text-5xl font-cinematic font-light text-foreground tracking-wide transition-all duration-700 ${
+              isVisible('showreel-section') ? 'animate-text-shimmer' : 'opacity-0 translate-y-8'
+            }`}>
               Performance
               <span className="block text-primary font-medium">Showreel</span>
             </h2>

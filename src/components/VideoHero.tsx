@@ -48,13 +48,13 @@ const VideoHero = () => {
                 isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
               }`}>Siri</span>
               <span className={`block text-primary font-medium font-display bg-gradient-to-r from-primary via-primary-glow to-primary bg-300% bg-clip-text text-transparent drop-shadow-lg transition-all duration-1000 delay-700 ${
-                isLoaded ? 'translate-y-0 opacity-100 animate-text-shimmer' : 'translate-y-20 opacity-0'
+                isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
               }`}>
                 Chandana
               </span>
             </h1>
             <div className={`w-32 h-0.5 bg-gradient-accent mx-auto transition-all duration-1000 delay-1000 ${
-              isLoaded ? 'scale-x-100 opacity-100 animate-premium-glow' : 'scale-x-0 opacity-0'
+              isLoaded ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
             }`}></div>
             <p className={`text-xl md:text-3xl text-muted-foreground font-light tracking-widest uppercase transition-all duration-1000 delay-1300 ${
               isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'

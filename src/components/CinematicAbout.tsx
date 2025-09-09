@@ -101,11 +101,11 @@ const CinematicAbout = () => {
         }`}>
           <div className="space-y-4">
             <h2 className={`text-4xl md:text-5xl font-header font-light text-foreground tracking-wide bg-gradient-to-r from-foreground via-primary to-foreground bg-300% bg-clip-text transition-all duration-1000 ${
-              isVisible('about-section') ? 'animate-text-shimmer' : ''
+              isVisible('about-section') ? 'opacity-100 translate-y-0 animate-text-shimmer' : 'opacity-0 translate-y-8'
             }`}>
               About
               <span className={`block text-primary font-medium font-display transition-all duration-1000 delay-500 ${
-                isVisible('about-section') ? 'animate-premium-glow' : ''
+                isVisible('about-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>The Artist</span>
             </h2>
             <div className={`w-32 h-0.5 bg-gradient-accent mx-auto transition-all duration-1000 delay-700 ${
