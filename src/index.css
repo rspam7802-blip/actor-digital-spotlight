@@ -192,4 +192,43 @@ All colors MUST be HSL.
     backface-visibility: hidden;
     perspective: 1000px;
   }
+
+  /* Performance optimizations for animations */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Optimize animations with will-change and contain */
+  [class*="animate-"] {
+    will-change: transform, opacity, filter;
+    contain: layout style paint;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* GPU acceleration for smooth transforms */
+  .transform-gpu {
+    transform: translateZ(0);
+  }
+
+  /* Smooth scroll and performance */
+  html {
+    scroll-behavior: auto;
+    transform: translateZ(0);
+  }
+
+  body {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
 }

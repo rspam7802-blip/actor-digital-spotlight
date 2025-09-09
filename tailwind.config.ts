@@ -108,10 +108,10 @@ export default {
 				},
 				'float-3d': {
 					'0%, 100%': { 
-						transform: 'translateY(0px) rotateX(0deg) rotateY(0deg)' 
+						transform: 'translate3d(0, 0px, 0) rotateX(0deg) rotateY(0deg)' 
 					},
 					'50%': { 
-						transform: 'translateY(-20px) rotateX(5deg) rotateY(2deg)' 
+						transform: 'translate3d(0, -20px, 0) rotateX(5deg) rotateY(2deg)' 
 					}
 				},
 				'rotate-3d': {
@@ -192,11 +192,11 @@ export default {
 				},
 				'premium-glow': {
 					'0%, 100%': {
-						transform: 'scale(1)',
+						transform: 'scale3d(1, 1, 1)',
 						filter: 'brightness(1) drop-shadow(0 0 20px hsl(var(--primary) / 0.3))'
 					},
 					'50%': {
-						transform: 'scale(1.02)',
+						transform: 'scale3d(1.02, 1.02, 1)',
 						filter: 'brightness(1.1) drop-shadow(0 0 40px hsl(var(--primary) / 0.6))'
 					}
 				},
@@ -227,40 +227,40 @@ export default {
 				'slide-up-stagger': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(100px) scale(0.8)'
+						transform: 'translate3d(0, 100px, 0) scale3d(0.8, 0.8, 1)'
 					},
 					'100%': {
 						opacity: '1',
-						transform: 'translateY(0) scale(1)'
+						transform: 'translate3d(0, 0, 0) scale3d(1, 1, 1)'
 					}
 				},
 				'fade-blur': {
 					'0%': {
 						opacity: '0',
 						filter: 'blur(10px)',
-						transform: 'scale(1.1)'
+						transform: 'scale3d(1.1, 1.1, 1)'
 					},
 					'100%': {
 						opacity: '1',
 						filter: 'blur(0px)',
-						transform: 'scale(1)'
+						transform: 'scale3d(1, 1, 1)'
 					}
 				},
 				'bounceIn': {
 					'0%': {
 						opacity: '0',
-						transform: 'scale(0.3)'
+						transform: 'scale3d(0.3, 0.3, 1)'
 					},
 					'50%': {
 						opacity: '1',
-						transform: 'scale(1.05)'
+						transform: 'scale3d(1.05, 1.05, 1)'
 					},
 					'70%': {
-						transform: 'scale(0.9)'
+						transform: 'scale3d(0.9, 0.9, 1)'
 					},
 					'100%': {
 						opacity: '1',
-						transform: 'scale(1)'
+						transform: 'scale3d(1, 1, 1)'
 					}
 				},
 				'typewriter': {
@@ -286,19 +286,19 @@ export default {
 				'float-3d': 'float-3d 6s ease-in-out infinite',
 				'rotate-3d': 'rotate-3d 20s linear infinite',
 				'tilt-3d': 'tilt-3d 4s ease-in-out infinite',
-				'scale-3d': 'scale-3d 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-				'flip-3d': 'flip-3d 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-				'slide-3d-left': 'slide-3d-left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-				'slide-3d-right': 'slide-3d-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-				'card-hover-3d': 'card-hover-3d 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+				'scale-3d': 'scale-3d 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
+				'flip-3d': 'flip-3d 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+				'slide-3d-left': 'slide-3d-left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+				'slide-3d-right': 'slide-3d-right 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+				'card-hover-3d': 'card-hover-3d 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
 				'parallax-scroll': 'parallax-scroll 1s linear',
-				'premium-glow': 'premium-glow 3s ease-in-out infinite',
+				'premium-glow': 'premium-glow 4s ease-in-out infinite',
 				'text-shimmer': 'text-shimmer 3s ease-in-out infinite',
 				'morph': 'morph 8s ease-in-out infinite',
 				'orbit': 'orbit 20s linear infinite',
-				'slide-up-stagger': 'slide-up-stagger 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-				'fade-blur': 'fade-blur 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-				'bounceIn': 'bounceIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+				'slide-up-stagger': 'slide-up-stagger 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+				'fade-blur': 'fade-blur 1s cubic-bezier(0.34, 1.56, 0.64, 1)',
+				'bounceIn': 'bounceIn 1s cubic-bezier(0.34, 1.56, 0.64, 1)',
 				'typewriter': 'typewriter 4s steps(40, end)',
 				'gradient-shift': 'gradient-shift 6s ease-in-out infinite'
 			}
