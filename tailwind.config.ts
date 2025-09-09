@@ -78,6 +78,7 @@ export default {
 				'dramatic': 'var(--shadow-dramatic)',
 				'glow': 'var(--shadow-glow)',
 				'elegant': 'var(--shadow-elegant)',
+				'glow-orb': '0 0 15px hsl(var(--primary)), 0 0 30px hsl(var(--primary) / 0.6)',
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',

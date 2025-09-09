@@ -1,6 +1,39 @@
 import { Calendar, MapPin, Award, Users } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 const TimelineExperience = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const timelineLineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!timelineRef.current || !timelineLineRef.current) return;
+
+      const timelineRect = timelineRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const timelineTop = timelineRect.top;
+      const timelineHeight = timelineRect.height;
+
+      // Calculate how much of the timeline is visible and scrolled through
+      const startOffset = windowHeight * 0.3; // Start animation when timeline is 30% visible
+      const endOffset = windowHeight * 0.7; // End when timeline is 70% past top
+
+      if (timelineTop > startOffset) {
+        setScrollProgress(0);
+      } else if (timelineTop < -timelineHeight + endOffset) {
+        setScrollProgress(100);
+      } else {
+        const visibleProgress = (startOffset - timelineTop) / (timelineHeight - endOffset + startOffset);
+        setScrollProgress(Math.max(0, Math.min(100, visibleProgress * 100)));
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const experiences = [
     {
       year: "2024",
@@ -67,9 +100,44 @@ const TimelineExperience = () => {
         </div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div ref={timelineRef} className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-primary/30 to-primary/10"></div>
+          <div 
+            ref={timelineLineRef}
+            className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-primary/30 to-primary/10"
+          ></div>
+          
+          {/* Animated Progress Line */}
+          <div 
+            className="absolute left-8 md:left-1/2 top-0 w-0.5 bg-gradient-to-b from-primary via-primary/80 to-primary/60 transition-all duration-300 ease-out"
+            style={{ 
+              height: `${scrollProgress}%`,
+              transform: 'translateX(-50%)'
+            }}
+          ></div>
+
+          {/* Glowing Orb */}
+          <div
+            className="absolute left-8 md:left-1/2 w-3 h-3 rounded-full bg-primary shadow-glow-orb transform -translate-x-1/2 transition-all duration-300 ease-out"
+            style={{
+              top: `${scrollProgress}%`,
+              boxShadow: `
+                0 0 10px hsl(var(--primary)),
+                0 0 20px hsl(var(--primary) / 0.6),
+                0 0 30px hsl(var(--primary) / 0.4)
+              `,
+              opacity: scrollProgress > 0 && scrollProgress < 100 ? 1 : 0
+            }}
+          >
+            {/* Inner pulsing core */}
+            <div className="absolute inset-0 rounded-full bg-primary animate-pulse opacity-80"></div>
+            
+            {/* Outer glow ring */}
+            <div 
+              className="absolute -inset-2 rounded-full bg-primary/30 animate-ping"
+              style={{ animationDuration: '2s' }}
+            ></div>
+          </div>
 
           <div className="space-y-16">
             {experiences.map((experience, index) => {
